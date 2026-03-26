@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ugyen Dorji — My Future Begins in India</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #04080f;
+  --bg2: #070d18;
+  --surface: #0c1526;
+  --surface2: #111e35;
+  --border: rgba(255,255,255,0.06);
+  --border2: rgba(255,255,255,0.1);
+  --gold: #f0c040;
+  --gold2: #e8a020;
+  --blue: #4a9eff;
+  --teal: #00e5c0;
+  --text: #eef2ff;
+  --muted: #7a8499;
+  --soft: #b0bcd4;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* CUSTOM CURSOR */
+.cursor{
+  width:10px;height:10px;
+  background:var(--gold);
+  border-radius:50%;
+  position:fixed;top:0;left:0;
+  pointer-events:none;z-index:9999;
+  transition:transform 0.15s ease;
+  mix-blend-mode:difference;
+}
+.cursor-ring{
+  width:36px;height:36px;
+  border:1.5px solid rgba(240,192,64,0.5);
+  border-radius:50%;
+  position:fixed;top:0;left:0;
+  pointer-events:none;z-index:9998;
+  transition:all 0.12s ease;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 6%;
+  background:rgba(4,8,15,0.8);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  transition:all 0.3s;
+}
+.nav-name{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:var(--text);letter-spacing:-0.3px;
+}
+.nav-name em{font-style:italic;color:var(--gold);}
+.nav-links{display:flex;gap:32px;list-style:none;}
+.nav-links a{
+  text-decoration:none;color:var(--muted);
+  font-size:13px;font-weight:600;letter-spacing:0.8px;
+  text-transform:uppercase;transition:color 0.2s;
+  font-family:'Plus Jakarta Sans',sans-serif;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{
+  padding:9px 22px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;border:none;border-radius:8px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:13px;font-weight:700;cursor:pointer;
+  text-decoration:none;
+  transition:all 0.2s;
+  letter-spacing:0.3px;
+}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 24px rgba(240,192,64,0.4);}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:120px 6% 80px;
+  position:relative;overflow:hidden;
+}
+
+/* Animated starfield */
+.stars{position:absolute;inset:0;pointer-events:none;}
+.star{
+  position:absolute;border-radius:50%;
+  background:white;
+  animation:twinkle var(--d,3s) ease-in-out infinite;
+  animation-delay:var(--delay,0s);
+}
+@keyframes twinkle{0%,100%{opacity:0.1;transform:scale(1);}50%{opacity:0.8;transform:scale(1.3);}}
+
+/* Diagonal accent line */
+.hero::before{
+  content:'';
+  position:absolute;top:0;right:15%;
+  width:1px;height:100%;
+  background:linear-gradient(to bottom,transparent,rgba(240,192,64,0.15),transparent);
+}
+
+.hero-left{flex:1;position:relative;z-index:1;}
+.hero-right{
+  flex:0 0 380px;
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Floating avatar card */
+.avatar-card{
+  width:320px;
+  background:var(--surface);
+  border:1px solid var(--border2);
+  border-radius:24px;
+  padding:32px 28px;
+  position:relative;
+  animation:float 6s ease-in-out infinite;
+ 
+}
+.avatar-card img{
+    width:100%;
+    height:100%;
+    border-radius: 50%;
+}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+.avatar-card::before{
+  content:'';position:absolute;inset:-1px;
+  border-radius:25px;
+  background:linear-gradient(135deg,rgba(240,192,64,0.2),transparent,rgba(74,158,255,0.1));
+  z-index:-1;
+}
+.avatar-initials{
+  width:80px;height:80px;border-radius:20px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:28px;font-weight:900;color:#000;
+  margin:0 auto 20px;
+  box-shadow:0 0 30px rgba(240,192,64,0.3);
+}
+.avatar-card h3{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;
+  color:var(--text);margin-bottom:4px;
+}
+.avatar-card .age{
+  text-align:center;font-size:13px;
+  color:var(--muted);margin-bottom:20px;
+}
+.avatar-divider{height:1px;background:var(--border);margin-bottom:18px;}
+.avatar-stat{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-bottom:10px;
+}
+.avatar-stat:last-child{margin-bottom:0;}
+.avatar-stat span{font-size:12px;color:var(--muted);font-weight:500;}
+.avatar-stat strong{font-size:13px;color:var(--text);font-weight:600;text-align:right;max-width:160px;}
+.status-dot{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 12px;border-radius:100px;
+  background:rgba(0,229,192,0.1);
+  border:1px solid rgba(0,229,192,0.25);
+  color:var(--teal);font-size:12px;font-weight:600;
+  margin-top:16px;width:100%;justify-content:center;
+}
+.status-dot::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--teal);
+  animation:pulse2 2s infinite;
+}
+@keyframes pulse2{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.5);}}
+
+/* Hero text */
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:24px;
+  opacity:0;animation:fadeUp 0.8s 0.2s forwards;
+}
+.hero-label::before{content:'';width:24px;height:1px;background:var(--gold);}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(44px,5.5vw,72px);
+  font-weight:900;line-height:1.06;
+  letter-spacing:-1.5px;
+  margin-bottom:24px;
+  opacity:0;animation:fadeUp 0.8s 0.4s forwards;
+}
+.hero h1 em{
+  font-style:italic;
+  background:linear-gradient(135deg,var(--gold),#fff8d0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+.hero-desc{
+  font-size:17px;color:var(--soft);
+  line-height:1.75;max-width:480px;
+  font-weight:300;margin-bottom:36px;
+  opacity:0;animation:fadeUp 0.8s 0.6s forwards;
+}
+
+.hero-actions{
+  display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp 0.8s 0.8s forwards;
+}
+.btn-gold{
+  padding:14px 30px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;border:none;border-radius:10px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:15px;font-weight:700;cursor:pointer;
+  text-decoration:none;transition:all 0.2s;
+  box-shadow:0 0 30px rgba(240,192,64,0.25);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 0 45px rgba(240,192,64,0.4);}
+.btn-outline{
+  padding:14px 30px;
+  background:transparent;color:var(--text);
+  border:1px solid var(--border2);border-radius:10px;
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:15px;font-weight:600;cursor:pointer;
+  text-decoration:none;transition:all 0.2s;
+}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+
+/* Scroll indicator */
+.scroll-hint{
+  position:absolute;bottom:36px;left:6%;
+  display:flex;align-items:center;gap:10px;
+  font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-weight:600;
+  animation:fadeUp 1s 1.2s both;
+}
+.scroll-line{
+  width:40px;height:1px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  animation:extend 2s ease-in-out infinite;
+}
+@keyframes extend{0%,100%{width:40px;}50%{width:60px;}}
+
+/* ─── SECTIONS ─── */
+section{padding:100px 6%;position:relative;}
+
+.section-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:14px;
+}
+.section-eyebrow::before{content:'';width:18px;height:1.5px;background:var(--gold);}
+
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4vw,52px);
+  font-weight:900;letter-spacing:-1.5px;
+  line-height:1.08;margin-bottom:16px;color:var(--text);
+}
+
+.section-sub{
+  font-size:16px;color:var(--muted);
+  max-width:520px;line-height:1.75;
+  font-weight:300;margin-bottom:56px;
+}
+
+/* ─── ABOUT / INTRO LETTER ─── */
+.letter-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+.letter-wrap{
+  max-width:760px;margin:0 auto;
+  background:var(--surface);
+  border:1px solid var(--border2);
+  border-radius:24px;padding:52px 56px;
+  position:relative;overflow:hidden;
+}
+.letter-wrap::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--blue),var(--teal));
+}
+.letter-salutation{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;
+  color:var(--gold);margin-bottom:24px;font-style:italic;
+}
+.letter-body p{
+  font-size:16px;color:var(--soft);
+  line-height:1.85;font-weight:300;margin-bottom:18px;
+}
+.letter-body p strong{color:var(--text);font-weight:600;}
+.letter-sig{
+  margin-top:36px;padding-top:28px;
+  border-top:1px solid var(--border);
+}
+.letter-sig p{font-size:14px;color:var(--muted);margin-bottom:4px;}
+.letter-sig strong{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:700;color:var(--text);
+  font-style:italic;
+}
+
+/* ─── BACKGROUND ─── */
+.bg-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+@media(max-width:768px){.bg-grid{grid-template-columns:1fr;}}
+
+.bg-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:18px;padding:28px 24px;
+  position:relative;overflow:hidden;
+  transition:all 0.35s;
+}
+.bg-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.35s;
+}
+.bg-card:hover{border-color:rgba(240,192,64,0.2);transform:translateY(-5px);}
+.bg-card:hover::after{transform:scaleX(1);}
+
+.bg-icon{font-size:32px;margin-bottom:16px;}
+.bg-card h4{
+  font-size:16px;font-weight:700;color:var(--text);
+  margin-bottom:8px;letter-spacing:-0.3px;
+}
+.bg-card p{font-size:13px;color:var(--muted);line-height:1.65;}
+.bg-duration{
+  display:inline-block;margin-top:14px;
+  padding:4px 12px;border-radius:6px;
+  background:rgba(240,192,64,0.08);
+  border:1px solid rgba(240,192,64,0.2);
+  color:var(--gold);font-size:11px;font-weight:700;
+  letter-spacing:0.8px;text-transform:uppercase;
+}
+
+/* ─── COURSE COMPARISON ─── */
+.courses-bg{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+.course-cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+@media(max-width:768px){.course-cards{grid-template-columns:1fr;}}
+
+.course-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:22px;padding:40px 36px;
+  position:relative;overflow:hidden;
+  transition:all 0.3s;
+}
+.course-card.primary{
+  border-color:rgba(240,192,64,0.25);
+  background:linear-gradient(160deg,rgba(240,192,64,0.06),var(--surface));
+}
+.course-card.primary::before{
+  content:'⭐ Preferred Path';
+  position:absolute;top:20px;right:20px;
+  padding:5px 14px;border-radius:100px;
+  background:rgba(240,192,64,0.12);
+  border:1px solid rgba(240,192,64,0.3);
+  color:var(--gold);font-size:11px;font-weight:700;
+  letter-spacing:0.8px;text-transform:uppercase;
+}
+.course-card:hover{transform:translateY(-5px);}
+.course-card.primary:hover{box-shadow:0 20px 60px rgba(240,192,64,0.1);}
+
+.course-emoji{font-size:44px;margin-bottom:20px;display:block;}
+.course-card h3{
+  font-family:'Playfair Display',serif;
+  font-size:26px;font-weight:700;
+  letter-spacing:-0.5px;margin-bottom:8px;
+  color:var(--text);
+}
+.course-card .course-sub{
+  font-size:14px;color:var(--muted);
+  margin-bottom:28px;font-weight:300;
+}
+
+/* Timeline bars */
+.timeline-bar{margin-bottom:28px;}
+.timeline-bar-label{
+  display:flex;justify-content:space-between;
+  font-size:12px;color:var(--muted);
+  font-weight:600;margin-bottom:8px;
+  text-transform:uppercase;letter-spacing:0.5px;
+}
+.timeline-track{
+  height:6px;background:var(--surface2);
+  border-radius:3px;overflow:hidden;
+}
+.timeline-fill{
+  height:100%;border-radius:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  animation:fillBar 1.5s ease forwards;
+  transform:scaleX(0);transform-origin:left;
+}
+.course-card:not(.primary) .timeline-fill{
+  background:linear-gradient(90deg,var(--blue),var(--teal));
+}
+@keyframes fillBar{to{transform:scaleX(1);}}
+
+.course-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.course-features li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:var(--soft);
+}
+.course-features li::before{
+  content:'';flex-shrink:0;margin-top:4px;
+  width:16px;height:16px;border-radius:50%;
+  background:rgba(240,192,64,0.1);
+  border:1px solid rgba(240,192,64,0.3);
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8l3 3 6-6' stroke='%23f0c040' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.course-card:not(.primary) .course-features li::before{
+  background:rgba(74,158,255,0.1);
+  border-color:rgba(74,158,255,0.3);
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.5 8l3 3 6-6' stroke='%234a9eff' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.course-cost{
+  padding:16px 18px;border-radius:12px;
+  background:var(--bg);border:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.course-cost span{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+.course-cost strong{font-size:18px;font-weight:700;color:var(--text);font-family:'Playfair Display',serif;}
+
+/* ─── ROADMAP ─── */
+.roadmap-list{
+  position:relative;
+  max-width:700px;
+  padding-left:48px;
+}
+.roadmap-list::before{
+  content:'';position:absolute;left:16px;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,var(--gold),rgba(240,192,64,0.1));
+}
+.roadmap-item{
+  position:relative;margin-bottom:40px;
+  opacity:0;transform:translateX(20px);
+  transition:all 0.6s ease;
+}
+.roadmap-item.visible{opacity:1;transform:none;}
+.roadmap-dot{
+  position:absolute;left:-40px;top:4px;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--gold);
+  transition:all 0.3s;
+}
+.roadmap-item:hover .roadmap-dot{
+  background:var(--gold);
+  box-shadow:0 0 16px rgba(240,192,64,0.5);
+}
+.roadmap-year{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:6px;
+}
+.roadmap-item h4{
+  font-size:18px;font-weight:700;color:var(--text);
+  margin-bottom:6px;letter-spacing:-0.3px;
+}
+.roadmap-item p{font-size:14px;color:var(--muted);line-height:1.65;font-weight:300;}
+
+/* ─── WHY INDIA ─── */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:16px;
+}
+.why-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:28px 24px;
+  transition:all 0.3s;
+}
+.why-card:hover{border-color:rgba(240,192,64,0.2);transform:translateY(-4px);}
+.why-card .why-emoji{font-size:28px;margin-bottom:14px;display:block;}
+.why-card h4{font-size:15px;font-weight:700;color:var(--text);margin-bottom:7px;letter-spacing:-0.2px;}
+.why-card p{font-size:13px;color:var(--muted);line-height:1.65;font-weight:300;}
+
+/* ─── COMMITMENT ─── */
+.commitment-bg{background:var(--bg2);border-top:1px solid var(--border);}
+
+.commitment-inner{
+  max-width:720px;margin:0 auto;text-align:center;
+}
+.big-quote{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(28px,4vw,48px);
+  font-weight:900;line-height:1.15;
+  letter-spacing:-1.5px;
+  color:var(--text);
+  margin-bottom:28px;
+  font-style:italic;
+}
+.big-quote em{
+  background:linear-gradient(135deg,var(--gold),#fff8d0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  font-style:italic;
+}
+
+.pledge-cards{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:14px;margin-top:48px;
+}
+@media(max-width:768px){.pledge-cards{grid-template-columns:1fr;}}
+
+.pledge-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:16px;padding:24px 20px;text-align:left;
+  transition:all 0.3s;
+}
+.pledge-card:hover{border-color:rgba(240,192,64,0.2);}
+.pledge-num{
+  font-family:'Playfair Display',serif;
+  font-size:36px;font-weight:900;
+  color:rgba(240,192,64,0.2);
+  margin-bottom:8px;line-height:1;
+}
+.pledge-card h4{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.pledge-card p{font-size:13px;color:var(--muted);line-height:1.6;font-weight:300;}
+
+/* ─── FINAL CTA ─── */
+.final-cta{
+  text-align:center;padding:120px 6%;
+  position:relative;overflow:hidden;
+}
+.final-cta::before{
+  content:'';position:absolute;
+  top:50%;left:50%;
+  width:600px;height:600px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(240,192,64,0.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.final-cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(36px,5vw,64px);
+  font-weight:900;letter-spacing:-2px;
+  line-height:1.08;margin-bottom:20px;
+}
+.final-cta h2 em{font-style:italic;color:var(--gold);}
+.final-cta p{
+  font-size:17px;color:var(--muted);
+  max-width:480px;margin:0 auto 40px;
+  line-height:1.75;font-weight:300;
+}
+.cta-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+/* FOOTER */
+footer{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:32px 6%;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+footer p{font-size:13px;color:var(--muted);}
+footer span{color:var(--gold);}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* PROGRESS BAR */
+.progress-bar{
+  position:fixed;top:0;left:0;z-index:200;
+  height:2px;background:linear-gradient(90deg,var(--gold),var(--blue));
+  width:0%;transition:width 0.1s;
+}
+
+@media(max-width:900px){
+  .hero{flex-direction:column;gap:48px;padding-top:140px;}
+  .hero-right{flex:none;width:100%;}
+  .avatar-card{width:100%;max-width:320px;margin:0 auto;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="progress-bar" id="progress"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-name"><em>Ugyen</em> Dorji</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#background">Background</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#commitment">My Pledge</a></li>
+  </ul>
+  <a href="#commitment" class="nav-cta">Read My Pledge</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Stars -->
+  <div class="stars" id="stars"></div>
+
+  <div class="hero-left">
+    <div class="hero-label">A Message to My Brothers</div>
+    <h1>My Dream.<br>My <em>Future.</em><br>Estimated Nu.1,000,000/- only. all together</h1>
+    <p class="hero-desc">
+      To Yeshi Singye and Ngawang Dorji — I've put together everything you need to know about my plan to study in India. This is my story, my goals, and my commitment to making you proud.
+    </p>
+    <div class="hero-actions">
+      <a href="#courses" class="btn-gold">See My Course Plan</a>
+      <a href="#about" class="btn-outline">Read My Letter</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="avatar-card">
+      <div class="avatar-initials"><img src="profile.jpg" alt=""></div>
+      <h3>Ugyen Dorji</h3>
+      <p class="age">20 years old · Phuentsholing, Bhutan</p>
+      <div class="avatar-divider"></div>
+      <div class="avatar-stat">
+        <span>Education</span>
+        <strong>Class 12 Graduate</strong>
+      </div>
+      <div class="avatar-stat">
+        <span>Training</span>
+        <strong>ICT Foundation + Coding</strong>
+      </div>
+      <div class="avatar-stat">
+        <span>Discipline</span>
+        <strong>BMT Graduate</strong>
+      </div>
+      <div class="avatar-stat">
+        <span>Goal</span>
+        <strong>B.Tech Software Engineer</strong>
+      </div>
+      <div class="status-dot">Open to Opportunities in India</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll to explore
+  </div>
+</section>
+
+<!-- LETTER TO BROTHERS -->
+<section class="letter-section" id="about">
+  <div class="letter-wrap reveal">
+    <div class="letter-salutation">Dear Aue Yeshi Singye & Aue Ngawang Dorji,</div>
+    <div class="letter-body">
+      <p>I hope this finds you both well. I've been thinking long and hard about my future, and I wanted to share my thoughts with you in a way that shows you how seriously I'm taking this decision.</p>
+      <p>I am <strong>20 years old</strong>, a Class 12 graduate, and I've already taken steps to build my foundation — I completed <strong>1.5 months in ICT Foundation</strong>, a <strong>full 2-month Introduction to Coding course</strong>, and <strong>3 months of Basic Military Training</strong>. These experiences have taught me focus, discipline, and a genuine passion for technology.</p>
+      <p>I want to pursue higher education in <strong>India</strong> — specifically a <strong>B.Tech in Software Engineering</strong>. I know it's a big commitment — 3 years of diploma followed by 3 years of bachelor's degree — but I believe this path will set me up for a career that can genuinely support our family and contribute to Bhutan's growing tech sector.</p>
+      <p>I've also considered <strong>Nursing</strong> as an alternative path — a noble profession with strong job security. I've laid out both options honestly on this page so you can see my thinking clearly.</p>
+      <p>I am ready. I am committed. And I am asking for your support to take this next step.</p>
+    </div>
+    <div class="letter-sig">
+      <p>With love and respect,</p>
+      <strong>Ugyen Dorji</strong>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background">
+  <div class="section-eyebrow reveal">My Foundation</div>
+  <h2 class="section-title reveal">What I've Already<br>Built</h2>
+  <p class="section-sub reveal">Before asking for support, I've invested in myself. Here's what I've accomplished so far.</p>
+  <div class="bg-grid reveal">
+    <div class="bg-card">
+      <div class="bg-icon">💻</div>
+      <h4>ICT Foundation</h4>
+      <p>Gained core digital literacy skills — computer basics, internet, office tools, and introductory networking concepts.</p>
+      <span class="bg-duration">1.5 Months</span>
+    </div>
+    <div class="bg-card">
+      <div class="bg-icon">🧑‍💻</div>
+      <h4>Introduction to Coding</h4>
+      <p>Learned programming fundamentals including HTML, CSS, basic JavaScript logic, and problem-solving through code.</p>
+      <span class="bg-duration">2 Months</span>
+    </div>
+    <div class="bg-card">
+      <div class="bg-icon">🪖</div>
+      <h4>Basic Military Training</h4>
+      <p>Completed rigorous physical and mental discipline training. Built resilience, teamwork, and a strong work ethic.</p>
+      <span class="bg-duration">3 Months</span>
+    </div>
+    <div class="bg-card">
+      <div class="bg-icon">📃</div>
+      <h4>Global ICT certified</h4>
+      <p>Has an aggrgarate of 912 mark outta 1000, in the global IC3 Digital literacy level 1</p>
+      <span class="bg-duration">3 Months</span>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-bg" id="courses">
+  <div class="section-eyebrow reveal">My Options</div>
+  <h2 class="section-title reveal">Two Paths.<br>One Decision.</h2>
+  <p class="section-sub reveal">I've researched both courses carefully. Here's an honest comparison for you to consider alongside me.</p>
+
+  <div class="course-cards reveal">
+
+    <!-- B.Tech -->
+    <div class="course-card primary">
+      <span class="course-emoji">🖥️</span>
+      <h3>B.Tech Software Engineering</h3>
+      <p class="course-sub">Diploma (3 yrs) + Bachelor's Degree (3 yrs) · India</p>
+
+      <div class="timeline-bar">
+        <div class="timeline-bar-label">
+          <span>Diploma — 3 Years</span><span>Phase 1</span>
+        </div>
+        <div class="timeline-track"><div class="timeline-fill" style="width:50%"></div></div>
+      </div>
+      <div class="timeline-bar">
+        <div class="timeline-bar-label">
+          <span>B.Tech Degree — 3 Years</span><span>Phase 2</span>
+        </div>
+        <div class="timeline-track"><div class="timeline-fill" style="width:100%"></div></div>
+      </div>
+
+      <ul class="course-features">
+        <li>Total duration: <strong>6 years</strong> in India</li>
+        <li>Globally recognised B.Tech degree</li>
+        <li>High demand career in Bhutan's growing tech sector</li>
+        <li>Foundation in coding already laid ✅</li>
+        <li>Potential to freelance / earn during studies</li>
+        <li>Aligns with my passion and prior training</li>
+      </ul>
+
+      <div class="course-cost">
+        <span>Estimated Duration</span>
+        <strong>6 Years Total: </strong>
+         <li><strong>Nu.1,000,000/- on both the courses</strong></li>
+      </div>
+    </div>
+
+    <!-- Nursing -->
+    <div class="course-card">
+      <span class="course-emoji">🏥</span>
+      <h3>Nursing College</h3>
+      <p class="course-sub">B.Sc Nursing (4 yrs) · India</p>
+
+      <div class="timeline-bar">
+        <div class="timeline-bar-label">
+          <span>B.Sc Nursing — 4 Years</span><span>Full Program</span>
+        </div>
+        <div class="timeline-track"><div class="timeline-fill" style="width:67%"></div></div>
+      </div>
+      <div class="timeline-bar" style="opacity:0.3;">
+        <div class="timeline-bar-label"><span>—</span><span></span></div>
+        <div class="timeline-track"><div class="timeline-fill" style="width:0%"></div></div>
+      </div>
+
+      <ul class="course-features">
+        <li>Duration: approximately 4 years</li>
+        <li>Stable, respected profession</li>
+        <li>Strong job security in Bhutan & abroad</li>
+        <li>Opportunity to work internationally</li>
+        <li>Serves the community directly</li>
+        <li>Good government employment prospects</li>
+      </ul>
+
+      <div class="course-cost">
+        <span>Estimated Duration</span>
+        <strong>4 Years Total : </strong>
+         <strong> Estimated amount Nu.600,000 loan</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="section-eyebrow reveal">The Plan</div>
+  <h2 class="section-title reveal">My 6-Year<br>Roadmap</h2>
+  <p class="section-sub reveal">Here's exactly what the B.Tech path looks like, year by year.</p>
+  <div class="roadmap-list">
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-year">2025 — Year 0</div>
+      <h4>Enrolment & Relocation to India</h4>
+      <p>Apply to institutions, complete paperwork, relocate and settle. Begin diploma program in Software Engineering.</p>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-year">2025–2026 — Year 1</div>
+      <h4>Diploma Year 1 — Fundamentals</h4>
+      <p>Programming basics, data structures, mathematics, computer organisation. Building the technical foundation.</p>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-year">2026–2027 — Year 2</div>
+      <h4>Diploma Year 2 — Applied Skills</h4>
+      <p>Web development, databases, networking, software design. Start building real projects and portfolio.</p>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-year">2027–2028 — Year 3</div>
+      <h4>Diploma Year 3 — Specialisation</h4>
+      <p>Advanced programming, internship, capstone project. Diploma completed. Transition into B.Tech program.</p>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-year">2028–2030 — Years 4–6</div>
+      <h4>B.Tech Degree — Software Engineering</h4>
+      <p>Advanced coursework, research projects, industry internships. Graduate with a full B.Tech degree in Software Engineering.</p>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-dot"></div>
+      <div class="roadmap-year">2030 — Beyond</div>
+      <h4>Career Launch in Bhutan or Abroad</h4>
+      <p>Return to Bhutan as a qualified Software Engineer — contributing to the tech industry, giving back to family, and building a future.</p>
+    </div>
+  </div>
+</section>
+
+<section id="university-choice" class="letter-section">
+  <div class="letter-wrap reveal">
+    <div class="letter-salutation">Why I Chose Lovely Professional University</div>
+    <div class="letter-body">
+      <p>I have decided to pursue my B.Tech at <strong>Lovely Professional University (LPU), India</strong>, because it offers the perfect combination of high-quality education, modern campus facilities, and excellent career opportunities.</p>
+      <p>Here are the main reasons for my choice:</p>
+      <ul>
+        <li><strong>Comprehensive Curriculum:</strong> LPU provides a well-rounded B.Tech program in Software Engineering that covers both theoretical concepts and practical skills, preparing me for the demands of the tech industry.</li>
+        <li><strong>Experienced Faculty:</strong> The university has highly qualified professors and industry experts who can guide me in both academics and career development.</li>
+        <li><strong>State-of-the-Art Campus:</strong> LPU has modern labs, libraries, and innovation centers, which will allow me to explore emerging technologies and gain hands-on experience.</li>
+        <li><strong>Strong Placement Record:</strong> LPU has an excellent track record of placing graduates in top tech companies with competitive salaries. This aligns perfectly with my goal of securing a high-paying job to repay my ESP loan.</li>
+        <li><strong>Diverse Student Community:</strong> Interacting with students from across India and abroad will help me develop teamwork, communication, and leadership skills.</li>
+        <li><strong>Affordability & Loan Support:</strong> The tuition fee is reasonable compared to other private universities, and it is compatible with the Bhutan ESP Loan, making financing realistic and manageable.</li>
+      </ul>
+      <p>Overall, LPU provides the right mix of academic excellence, career prospects, and personal growth opportunities, making it my ideal choice for pursuing a B.Tech degree.</p>
+    </div>
+  </div>
+</section>
+
+<section id="funding" class="letter-section">
+  <div class="letter-wrap reveal">
+    <div class="letter-salutation">How I Plan to Finance My Studies</div>
+    <div class="letter-body">
+      <p>To pursue my B.Tech in India, I am planning to avail the <strong>Bhutan ESP Education Loan</strong>. This loan offers a <strong>4% interest rate</strong> on the principal (gyelsups), which is quite reasonable, but the repayment will require careful planning.</p>
+      <p>Based on the loan amount I need — approximately <strong>Nu. 1,000,000/-</strong> for the entire program — I anticipate that it could take up to <strong>10 years</strong> to fully repay once I land a stable job after graduation. This is a long-term commitment, and I want to be transparent about the financial responsibilities involved.</p>
+      <p>The good news is that a B.Tech in Software Engineering in India opens the door to high-paying jobs in the tech sector. Entry-level software engineers typically earn between <strong>INR 400,000 – 600,000 per year</strong> (~Nu. 480,000 – 720,000), and with experience, salaries grow significantly. This means I can comfortably manage my loan payments while supporting myself, and eventually contribute back to our family.</p>
+      <p>While the interest rate is a concern, I believe that careful budgeting, prioritizing my career, and choosing a strong, in-demand field will ensure financial stability. I want you both to know that this plan is realistic and that I am prepared to take on this responsibility.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY INDIA -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="section-eyebrow reveal">Why India</div>
+  <h2 class="section-title reveal">The Right Place<br>to Study</h2>
+  <p class="section-sub reveal">India is a natural choice for Bhutanese students — here's why it makes sense for me.</p>
+  <div class="why-grid reveal">
+    <div class="why-card">
+      <span class="why-emoji">🌏</span>
+      <h4>Proximity to Home</h4>
+      <p>India borders Bhutan — I'll be close enough to visit family and come home for important occasions.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-emoji">💰</span>
+      <h4>Affordable Education</h4>
+      <p>Indian universities offer quality education at a fraction of the cost compared to Western countries.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-emoji">🏫</span>
+      <h4>Established Tech Colleges</h4>
+      <p>India has hundreds of strong engineering colleges with globally recognised B.Tech programs.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-emoji">🤝</span>
+      <h4>Bhutanese Community</h4>
+      <p>Many Bhutanese students already study in India — a supportive community is already there.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-emoji">🎓</span>
+      <h4>Recognised Degree</h4>
+      <p>B.Tech degrees from India are widely recognised in Bhutan and internationally for employment.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-emoji">📶</span>
+      <h4>Tech Hub Access</h4>
+      <p>Cities like Bangalore and Hyderabad are global tech hubs — perfect for internships and industry exposure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT -->
+<section class="commitment-bg" id="commitment">
+  <div class="commitment-inner">
+    <div class="section-eyebrow reveal" style="justify-content:center;">My Pledge</div>
+    <div class="big-reveal reveal">
+      <p class="big-quote">"I will not waste<br>a single <em>day.</em>"</p>
+      <p style="font-size:16px;color:var(--muted);line-height:1.8;font-weight:300;max-width:540px;margin:0 auto;">
+        To my brothers — I promise that if you support this journey, I will dedicate every day to making it count. I will study hard, stay disciplined, and return as someone our family and Bhutan can be proud of.
+      </p>
+    </div>
+    <div class="pledge-cards reveal">
+      <div class="pledge-card">
+        <div class="pledge-num">01</div>
+        <h4>Academic Excellence</h4>
+        <p>I will maintain strong grades and take my studies seriously — no shortcuts, no wasted time.</p>
+      </div>
+      <div class="pledge-card">
+        <div class="pledge-num">02</div>
+        <h4>Regular Updates</h4>
+        <p>I will keep you both fully informed — grades, progress, challenges and milestones, every step of the way.</p>
+      </div>
+      <div class="pledge-card">
+        <div class="pledge-num">03</div>
+        <h4>Return & Contribute</h4>
+        <p>After graduating, I will return to Bhutan and use my skills to build a career that benefits our family and country.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2 class="reveal">Support My<br><em>Journey.</em></h2>
+  <p class="reveal">Aue Yeshi & Aue Ngawang — all I need is your blessing and your belief in me. I'll handle the rest.</p>
+  <div class="cta-row reveal">
+    <a href="mailto:ugyendorji@email.com" class="btn-gold">📧 Reach Out to Me</a>
+    <a href="tel:+97517469652" class="btn-outline">📞 Call Me</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <span>Ugyen Dorji</span> — Personal Site</p>
+  <p>Made with ♥ for <span>Aue Yeshi & Aue Ngawang</span></p>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => {
+  mx=e.clientX; my=e.clientY;
+  cursor.style.transform = `translate(${mx-5}px,${my-5}px)`;
+});
+function animateRing(){
+  rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+  ring.style.transform=`translate(${rx-18}px,${ry-18}px)`;
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform+=` scale(1.8)`;ring.style.opacity='0.4';});
+  el.addEventListener('mouseleave',()=>{ring.style.opacity='1';});
+});
+
+// Stars
+const starsEl = document.getElementById('stars');
+for(let i=0;i<120;i++){
+  const s=document.createElement('div');
+  s.className='star';
+  const size=Math.random()*2+0.5;
+  s.style.cssText=`width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*4}s;`;
+  starsEl.appendChild(s);
+}
+
+// Scroll progress bar
+window.addEventListener('scroll',()=>{
+  const pct = window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;
+  document.getElementById('progress').style.width=pct+'%';
+});
+
+// Reveal on scroll
+const reveals=document.querySelectorAll('.reveal,.roadmap-item');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'),i*80);
+  });
+},{threshold:0.07});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
